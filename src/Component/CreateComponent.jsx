@@ -15,7 +15,6 @@ import Rect5 from "../assets/Rect6.svg";
 import Rect6 from "../assets/Rect8.svg";
 import Rect10 from "../assets/Rect10.svg";
 const CreateComponent = ({ info, current_component, removeComponent }) => {
-  console.log(info, "assa");
   const randValue = Math.floor(Math.random() * 100);
   let html = "";
   if (info.name === "main_frame") {
@@ -37,7 +36,6 @@ const CreateComponent = ({ info, current_component, removeComponent }) => {
     );
   }
   const [isPressing, setIsPressing] = useState(false);
-  console.log(isPressing, "isPressing");
   if (info.name === "shape" && info.type === "round1") {
     html = (
       <div
@@ -54,6 +52,8 @@ const CreateComponent = ({ info, current_component, removeComponent }) => {
         style={{
           width: `${info.width}px`,
           height: `${info.height}px`,
+          minHeight: "60px",
+          minWidth: "55px",
           backgroundImage: `url(${Round1})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
@@ -91,6 +91,8 @@ const CreateComponent = ({ info, current_component, removeComponent }) => {
         style={{
           width: `${info.width}px`,
           height: `${info.height}px`,
+          minHeight: "60px",
+          minWidth: "55px",
           backgroundImage: `url(${Round2})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
@@ -128,6 +130,8 @@ const CreateComponent = ({ info, current_component, removeComponent }) => {
         style={{
           width: `${info.width}px`,
           height: `${info.height}px`,
+          minHeight: "60px",
+          minWidth: "55px",
           backgroundImage: `url(${Round3})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
@@ -165,6 +169,8 @@ const CreateComponent = ({ info, current_component, removeComponent }) => {
         style={{
           width: `${info.width}px`,
           height: `${info.height}px`,
+          minHeight: "60px",
+          minWidth: "55px",
           backgroundImage: `url(${Round4})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
@@ -202,6 +208,8 @@ const CreateComponent = ({ info, current_component, removeComponent }) => {
         style={{
           width: `${info.width}px`,
           height: `${info.height}px`,
+          minHeight: "60px",
+          minWidth: "55px",
           backgroundImage: `url(${Round5})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
@@ -239,6 +247,8 @@ const CreateComponent = ({ info, current_component, removeComponent }) => {
         style={{
           width: `${info.width}px`,
           height: `${info.height}px`,
+          minHeight: "60px",
+          minWidth: "55px",
           backgroundImage: `url(${Round6})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
@@ -276,6 +286,8 @@ const CreateComponent = ({ info, current_component, removeComponent }) => {
         style={{
           width: `${info.width}px`,
           height: `${info.height}px`,
+          minHeight: "60px",
+          minWidth: "55px",
           backgroundImage: `url(${Round7})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
@@ -313,6 +325,8 @@ const CreateComponent = ({ info, current_component, removeComponent }) => {
         style={{
           width: `${info.width}px`,
           height: `${info.height}px`,
+          minHeight: "60px",
+          minWidth: "55px",
           backgroundImage: `url(${Rect1})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
@@ -350,6 +364,8 @@ const CreateComponent = ({ info, current_component, removeComponent }) => {
         style={{
           width: `${info.width}px`,
           height: `${info.height}px`,
+          minHeight: "60px",
+          minWidth: "55px",
           backgroundImage: `url(${Rect2})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
@@ -387,6 +403,8 @@ const CreateComponent = ({ info, current_component, removeComponent }) => {
         style={{
           width: `${info.width}px`,
           height: `${info.height}px`,
+          minHeight: "60px",
+          minWidth: "55px",
           backgroundImage: `url(${Rect4})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
@@ -424,6 +442,8 @@ const CreateComponent = ({ info, current_component, removeComponent }) => {
         style={{
           width: `${info.width}px`,
           height: `${info.height}px`,
+          minHeight: "60px",
+          minWidth: "55px",
           backgroundImage: `url(${Rect5})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
@@ -461,6 +481,8 @@ const CreateComponent = ({ info, current_component, removeComponent }) => {
         style={{
           width: `${info.width}px`,
           height: `${info.height}px`,
+          minHeight: "60px",
+          minWidth: "55px",
           backgroundImage: `url(${Rect6})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
@@ -498,6 +520,8 @@ const CreateComponent = ({ info, current_component, removeComponent }) => {
         style={{
           width: `${info.width}px`,
           height: `${info.height}px`,
+          minHeight: "60px",
+          minWidth: "55px",
           backgroundImage: `url(${Rect10})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
@@ -671,6 +695,8 @@ const CreateComponent = ({ info, current_component, removeComponent }) => {
           left: `${info.left}px`,
           top: `${info.top}px`,
           zIndex: info.z_index,
+          minHeight: "60px",
+          minWidth: "55px",
           transform: info.rotate ? `rotate(${info.rotate}deg)` : "rotate(0deg)",
           padding: `${info.padding}px`,
           color: info.color,
@@ -683,7 +709,11 @@ const CreateComponent = ({ info, current_component, removeComponent }) => {
           style={{ fontSize: `${info.font}px`, fontWeight: `${info.weight}px` }}
           className="w-full h-full"
         >
-          {info.title}
+          <input
+            type="text"
+            className="w-full h-full focus:outline-none text-sm text-bold"
+            placeholder="Add Text"
+          />
         </h2>
         {current_component.id === info.id && (
           <div

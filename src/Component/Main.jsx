@@ -425,7 +425,7 @@ const Main = () => {
                   : "w-[calc(100%-250px)] overflow-hidden"
               }`}
             >
-              <div className="min-w-[650px] min-h-[480px] flex justify-center items-center overflow-hidden">
+              <div className="max-w-[650px] max-h-[480px] flex justify-center items-center overflow-hidden">
                 <div
                   id="main_design"
                   className="w-auto relative h-auto overflow-hidden"
