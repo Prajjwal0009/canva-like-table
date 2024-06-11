@@ -18,6 +18,8 @@ import Rect4 from "../assets/Rect4.svg";
 import Rect5 from "../assets/Rect6.svg";
 import Rect6 from "../assets/Rect8.svg";
 import Rect10 from "../assets/Rect10.svg";
+import HolloCircle from "../assets/CircleHollow.svg";
+
 
 import CreateComponent from "./CreateComponent";
 
@@ -158,8 +160,8 @@ const Main = () => {
       left: 10,
       top: 10,
       opacity: 1,
-      width: type === "verticalRect" ? 16 : 200,
-      height: type === "horizontalRect" ? 16 : 150,
+      width: type === "verticalRect" ? 16 : 80,
+      height: type === "horizontalRect" ? 16 : 80,
       rotate,
       z_index: 2,
       color: "#3c3c3d",
@@ -391,6 +393,13 @@ const Main = () => {
                   onClick={() => createShape("shape", "horizontalRect")}
                   className="h-[10px] w-[60px] bg-[#3c3c3d] cursor-pointer ml-8 mt-6"
                 ></div>
+                <div></div>
+                <img
+                  src={HolloCircle}
+                  alt=""
+                  onClick={() => createShape("shape", "holloCircle")}
+                  className="h-[60px] w-[60px] bg-[#3c3c3d] cursor-pointer p-2"
+                />
                 {/* <div
                   onClick={() => createShape("shape", "circle")}
                   className="h-[90px] w-[90px] bg-[#3c3c3d] cursor-pointer rounded-full"

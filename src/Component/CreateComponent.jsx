@@ -14,6 +14,8 @@ import Rect4 from "../assets/Rect4.svg";
 import Rect5 from "../assets/Rect6.svg";
 import Rect6 from "../assets/Rect8.svg";
 import Rect10 from "../assets/Rect10.svg";
+import HolloCircle from "../assets/CircleHollow.svg";
+
 const CreateComponent = ({ info, current_component, removeComponent }) => {
   const randValue = Math.floor(Math.random() * 100);
   let html = "";
@@ -612,6 +614,40 @@ const CreateComponent = ({ info, current_component, removeComponent }) => {
         <p className="text-white w-full h-full flex text-center items-center justify-center font-bold">
           B
         </p>
+      </div>
+    );
+  }
+  if (info.name === "shape" && info.type === "holloCircle") {
+    html = (
+      <div
+        id={`${randValue}HC`}
+        onClick={() => info.setCurrentComponent(info)}
+        style={{
+          width: `${info.width}px`,
+          height: `${info.height}px`,
+          minHeight: "60px",
+          minWidth: "55px",
+          backgroundImage: `url(${HolloCircle})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          opacity: info.opacity,
+          left: `${info.left}px`,
+          top: `${info.top}px`,
+          zIndex: info.z_index,
+          transform: info.rotate ? `rotate(${info.rotate}deg)` : "rotate(0deg)",
+        }}
+        className="absolute group hover:border-[2px] hover:border-indigo-500"
+      >
+        <Element id={`${randValue}HC`} info={info} exId={""} />
+        {current_component.id === info.id && (
+          <div
+            onClick={() => removeComponent(info.id)}
+            className="px-3 py-2 bg-white absolute top-0 hidden group-hover:block cursor-pointer rounded-md"
+          >
+            <BsTrash />
+          </div>
+        )}
       </div>
     );
   }

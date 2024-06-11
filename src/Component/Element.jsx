@@ -51,7 +51,7 @@ const Element = ({ id, info, exId }) => {
         src={Rotate}
         alt=""
         onMouseDown={() => info.rotateElement(id, info)}
-        className="absolute -top-[15px] left-[45%] translate-[-50%,0%] w-[9px] h-[9px] cursor-alias w-[50px] h-[50px] fa-repeat z-[9999]"
+        className="hidden absolute group-hover:block -top-[15px] left-[45%] translate-[-50%,0%] w-[12px] h-[12px] cursor-alias fa-rotate z-[9999]"
       />
       <div></div>
     </>
